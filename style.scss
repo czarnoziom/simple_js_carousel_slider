@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$s: 1.5; //SLIDER SCALE
+$h: 267px * $s; //SLIDER HEIGHT
+$w: 400px * $s; //SLIDER WIDTH
+$n: 5+2; //NUMBER OF SLIDES + 2
+$c1: rgb(255, 208, 0);
+$c2: rgba(0, 0, 0, 0.6);
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 116, 1) 48%, rgba(0, 212, 255, 1) 100%);
+}
+
+.slider-container {
+    width: $w;
+    height: $h;
+    margin: 100px auto;
+    overflow: hidden;
+
+    #prev-btn,
+    #next-btn {
+        background-color: $c1;
+        z-index: 999;
+        position: relative;
+        top: $h/2.1;
+        width: $w/16;
+        height: $h/10;
+        border: none;
+        border-radius: none;
+    }
+
+    #prev-btn {
+        left: $w/32;
+        clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    }
+
+    #next-btn {
+        left: $w/1.2;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    }
+
+    .slide {
+        position: relative;
+        top: -$h/8.79;
+        display: flex;
+        width: $w*$n;
+        height: $h;
+
+        div {
+            p {
+                margin: 0 30%;
+                width: 40%;
+                background-color: $c2;
+            }
+        }
+
+        .img01,
+        .img02,
+        .img03,
+        .img04,
+        .img05 {
+            color: $c1;
+            text-align: center;
+            font-size: $h/10;
+            padding: 4.6% 0 0 0;
+            width: $w;
+            height: $h;
+            background-size: cover;
+        }
+
+        .img01 {
+            background-image: url("./img/001.webp");
+        }
+
+        .img02 {
+            background-image: url("./img/002.webp");
+        }
+
+        .img03 {
+            background-image: url("./img/003.webp");
+        }
+
+        .img04 {
+            background-image: url("./img/004.webp");
+        }
+
+        .img05 {
+            background-image: url("./img/005.webp");
+        }
+    }
+}
+
+.link {
+    width: 100% !important;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+    }
+}
